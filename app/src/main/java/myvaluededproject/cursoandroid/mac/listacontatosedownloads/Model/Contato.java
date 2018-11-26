@@ -1,6 +1,7 @@
-package myvaluededproject.cursoandroid.mac.listacontatosedownloads;
+package myvaluededproject.cursoandroid.mac.listacontatosedownloads.Model;
+
 //made by John Welber
-class Contato {
+public class Contato {
     private int id;
     private String nome;
     private String email;
@@ -12,6 +13,10 @@ class Contato {
         this.email = email;
         this.urlImagem = urlImagem;
         this.midiaLocal = midiaLocal;
+    }
+
+    public Contato() {
+
     }
 
     public String getNome() {
@@ -45,10 +50,12 @@ class Contato {
     public void setMidiaLocal(String midiaLocal) {
         this.midiaLocal = midiaLocal;
     }
-public void setId(int id){
-        this.id = id;
-}
+
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ListaContatoseDownloads</string>
+	<string name="nome">Nome</string>
+	<string name="email">Email</string>
+	<string name="salvar">Salvar</string>
+	<string name="url">URL</string>
 </resources>
