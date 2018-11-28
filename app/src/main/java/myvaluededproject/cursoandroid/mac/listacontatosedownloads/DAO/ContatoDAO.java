@@ -64,4 +64,6 @@ public class ContatoDAO extends BaseDAO {
         getWritableDatabase().update("Contato", values, "id=?", args);
 
     }
+
+
 }

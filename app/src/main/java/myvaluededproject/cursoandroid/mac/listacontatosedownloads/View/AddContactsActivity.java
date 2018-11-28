@@ -107,13 +107,9 @@ public class AddContactsActivity extends AppCompatActivity {
     private File createImageFile(int id) throws IOException {
         // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        File image = File.createTempFile(
-                String.valueOf(id) + "_" + timeStamp,  /* prefix */
-                ".jpg",         /* suffix */
-                storageDir      /* directory */
-        );
+        File storageDir = Environment.getExternalStoragePublicDirectory("/FBV/" + Environment.DIRECTORY_PICTURES + "/" + String.valueOf(id) + "_" + timeStamp + ".jpg");
 
+        File image = storageDir.getAbsoluteFile();
 
         // Save a file: path for use with ACTION_VIEW intents
         caminhoFoto = image.getAbsolutePath();

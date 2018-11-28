@@ -24,7 +24,7 @@ import java.util.List;
 
 public class ListMusicActivity extends AppCompatActivity {
     private List<Song> songs;
-    private int positionCurrent;
+    private int positionCurrent = 0;
     private ListView listaSongs;
     private MediaPlayer mediaPlayer;
     private Song music;
@@ -53,8 +53,19 @@ public class ListMusicActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if (positionCurrent != i) {
                     positionCurrent = i;
+
+
+                }
+                if (positionCurrent == i && !mediaPlayer.isPlaying()) {
+                    mediaPlayer.start();
+                    play.setImageResource(android.R.drawable.ic_media_pause);
+                }
+                if (positionCurrent == i && mediaPlayer.isPlaying()) {
+
+                } else {
                     setMusic(i);
                 }
+
             }
         });
 
@@ -68,7 +79,9 @@ public class ListMusicActivity extends AppCompatActivity {
 
                 } else {
                     mediaPlayer.start();
-                    play.setImageResource(android.R.drawable.ic_media_pause);
+                    if (mediaPlayer.isPlaying()) {
+                        play.setImageResource(android.R.drawable.ic_media_pause);
+                    }
                 }
             }
         });

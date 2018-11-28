@@ -51,6 +51,13 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case 2:
+                        intent = new Intent(MainActivity.this, ListVideoActivity.class);
+
+                        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+                        } else {
+                            startActivityResult(intent);
+                        }
                         break;
                 }
             }
